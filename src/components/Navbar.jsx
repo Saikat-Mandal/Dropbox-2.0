@@ -53,8 +53,8 @@ function Navbar() {
 
             </div>
             <div className='flex justify-end items-center w-1/5 cursor-pointer '>
-                <span onClick={handleThemeChange} className='mr-6 '>{theme ? <IoSunnyOutline className=' text-white' /> : <FaRegMoon />}</span>
-                <div className=' mr-6'>
+                <span onClick={handleThemeChange} className=''>{theme ? <IoSunnyOutline className=' text-white' /> : <FaRegMoon />}</span>
+                <div className='px-2'>
                     {
                         user !== null ? <Link onClick={onLogout} className={fontColor + ` text-base`}>Logout</Link> : <Link to={"/signup"} className={fontColor + ` text-base`}>Sign in</Link>
                     }

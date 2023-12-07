@@ -46,7 +46,7 @@ function Register() {
         const { response, error } = await signInWithGoogle()
         if (response.user) {
             navigate("/dashboard")
-            console.log(response);
+            // console.log(response);
         }
         else {
             return console.log(error);
@@ -55,7 +55,7 @@ function Register() {
     return (
         <Home>
             <div className={bgColor + ' w-full flex justify-center h-screen'}>
-                <div className="flex w-1/3 ">
+                <div className="flex md:w-1/3 ">
                     <Container>
                         <Typography variant="h4" gutterBottom className={textColor + " font-bold"}>
                             Signup
