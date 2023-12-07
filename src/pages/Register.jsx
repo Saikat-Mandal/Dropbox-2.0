@@ -32,7 +32,7 @@ function Register() {
         const { response, error } = await signUpWithEmailPassword(email, password)
 
         if (error) {
-            return console.log(error);
+            return alert(error);
         }
         else {
             console.log(response);
@@ -49,10 +49,18 @@ function Register() {
             // console.log(response);
         }
         else {
-            return console.log(error);
+            return alert(error);
         }
     }
+
+
+    const styles = {
+        color: theme ? "white" : "black",
+    }
+
     return (
+
+
         <Home>
             <div className={bgColor + ' w-full flex justify-center h-screen'}>
                 <div className="flex md:w-1/3 ">
@@ -71,7 +79,7 @@ function Register() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
                                 className={" text-white font-normal"}
-
+                                InputProps={{ style: styles }}
                             />
                             <TextField
                                 label="Password"
@@ -83,6 +91,7 @@ function Register() {
                                 onChange={(e) => setPassword(e.target.value)}
                                 value={password}
                                 className={" font-normal"}
+                                InputProps={{ style: styles }}
                             />
 
                             <Button variant="contained" className=' bg-blue-700 rounded-none' onClick={onSignUp} >

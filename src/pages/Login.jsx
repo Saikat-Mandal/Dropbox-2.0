@@ -25,7 +25,7 @@ function Login() {
         const { response, error } = await signInWithEmailPasswordFunction(email, password)
 
         if (error) {
-            return console.log(error);
+            return alert(error);
         }
         else {
             navigate("/dashboard")
@@ -62,6 +62,11 @@ function Login() {
     const textColor = theme ? "text-white" : ""
 
 
+    const styles = {
+        color: theme ? "white" : "black",
+    }
+
+
     return (
         <Home>
             <div className={bgColor + ' w-full flex justify-center h-screen'}>
@@ -81,6 +86,7 @@ function Login() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
                                 className={textColor + " font-normal"}
+                                InputProps={{ style: styles }}
                             />
                             <TextField
                                 label="Password"
@@ -92,6 +98,7 @@ function Login() {
                                 onChange={(e) => setPassword(e.target.value)}
                                 value={password}
                                 className={textColor + " font-normal"}
+                                InputProps={{ style: styles }}
                             />
 
                             <Button variant="contained" className=' bg-blue-700 rounded-none' onClick={onLogin} >

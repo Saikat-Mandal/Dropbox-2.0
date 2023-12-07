@@ -108,7 +108,7 @@ function Dashboard() {
 
 
                 <div className='h-1/3 bg-slate-100 cursor-pointer'>
-                    <div {...getRootProps()} className={`${isDragActive ? " bg-cyan-300" : ""} w-full  h-full flex items-center justify-center `} >
+                    <div {...getRootProps()} className={`${isDragActive ? "bg-slate-400" : ""} w-full  h-full flex items-center justify-center `} >
                         <input {...getInputProps()} />
                         {
                             filename ?
