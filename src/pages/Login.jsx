@@ -11,10 +11,15 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase/config';
 
 function Login() {
+
+    // states for email and password 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const setUser = useSetRecoilState(userState)
     const navigate = useNavigate()
+
+
+    // login with email and password 
     const onLogin = async () => {
 
         const { response, error } = await signInWithEmailPasswordFunction(email, password)
@@ -23,13 +28,12 @@ function Login() {
             return console.log(error);
         }
         else {
-
-            // setUser(response.user)
             navigate("/dashboard")
         }
 
     }
 
+    // login in with google 
     const signInWithGoogleFunction = async () => {
         const { response, error } = await signInWithGoogle()
         if (response.user) {
@@ -42,6 +46,8 @@ function Login() {
     }
 
 
+
+    // set user for first time to recoil state 
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             const userCopy = JSON.parse(JSON.stringify(user));
@@ -50,9 +56,12 @@ function Login() {
     }, [setUser])
 
 
+    // theme 
     const theme = useRecoilValue(useTheme)
     const bgColor = theme ? "bg-gray-900" : ""
     const textColor = theme ? "text-white" : ""
+
+
     return (
         <Home>
             <div className={bgColor + ' w-full flex justify-center h-screen'}>

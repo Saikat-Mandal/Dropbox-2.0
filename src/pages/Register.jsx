@@ -8,15 +8,25 @@ import { FcGoogle } from "react-icons/fc";
 import Home from './Home';
 import { userState } from '../store/atoms/user';
 function Register() {
+
+    // states for email and password 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    // router 
     const navigate = useNavigate()
+
+    // theme 
     const theme = useRecoilValue(useTheme)
     const bgColor = theme ? "bg-gray-900" : ""
     const textColor = theme ? "text-white" : ""
 
+
+    //setting user states 
     const [user, setUser] = useRecoilState(userState)
 
+
+    // sign up user using email and password 
     const onSignUp = async () => {
 
         const { response, error } = await signUpWithEmailPassword(email, password)
@@ -31,6 +41,7 @@ function Register() {
 
     }
 
+    // sign in with google 
     const signInWithGoogleFunction = async () => {
         const { response, error } = await signInWithGoogle()
         if (response.user) {

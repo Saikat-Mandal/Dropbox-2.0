@@ -8,6 +8,7 @@ import { useUser } from '../store/selectors/useUser';
 import { userState } from '../store/atoms/user';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase/config';
+import { IoSunnyOutline } from "react-icons/io5";
 
 function Navbar() {
     const [theme, setTheme] = useRecoilState(themeState)
@@ -52,8 +53,8 @@ function Navbar() {
 
             </div>
             <div className='flex justify-end items-center w-1/5 cursor-pointer '>
-                <span onClick={handleThemeChange} className='mr-2 '>{theme ? <FaRegSun className=' text-white' /> : <FaRegMoon />}</span>
-                <div className=' mr-2'>
+                <span onClick={handleThemeChange} className='mr-6 '>{theme ? <IoSunnyOutline className=' text-white' /> : <FaRegMoon />}</span>
+                <div className=' mr-6'>
                     {
                         user !== null ? <Link onClick={onLogout} className={fontColor + ` text-base`}>Logout</Link> : <Link to={"/signup"} className={fontColor + ` text-base`}>Sign in</Link>
                     }
