@@ -94,7 +94,7 @@ function Login() {
                                 fullWidth
                                 margin="normal"
                                 name="password"
-                                type="text"
+                                type="password"
                                 onChange={(e) => setPassword(e.target.value)}
                                 value={password}
                                 className={textColor + " font-normal"}
