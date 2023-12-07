@@ -5,13 +5,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth , GoogleAuthProvider  } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDW8GBvTA_2gxtZA1E6vev1keZGc8BgZbo",
-  authDomain: "dropbox-2.firebaseapp.com",
-  projectId: "dropbox-2",
-  storageBucket: "dropbox-2.appspot.com",
-  messagingSenderId: "757788896067",
-  appId: "1:757788896067:web:f55896c00911fcd29cddf6",
-  measurementId: "G-RTYJSQTRYJ"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGIN_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase
